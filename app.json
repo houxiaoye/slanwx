@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/seo/seo",    
+    "pages/sem/sem",    
+    "pages/index/index"
+  ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "./page/seo/seo",
+      "text": "text",
+      "iconPath": "iconPath",
+      "navigationBarTitleText": "seo",
+      "selectedIconPath": "selectedIconPath"
+    },
+    {
+      "pagePath": "./page/sem/sem",
+      "text": "text",
+      "iconPath": "iconPath",
+      "navigationBarTitleText": "首页",
+      "selectedIconPath": "selectedIconPath"
+    }]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "Slan",
+    "navigationBarTextStyle":"white"
+  }
+}

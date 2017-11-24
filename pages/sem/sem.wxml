@@ -1,0 +1,168 @@
+<view class='header'>
+  <view class="headertop">
+    <view class="logo">
+      <image src='../../images/logo.png' class='logopic'></image>
+    </view>
+    <text>{{projectTitle}}</text>
+  </view>
+  <view class="headerbottom">
+    <text class="seotitle">针对行业痛点提供<text>解决方案</text></text>
+    <view class="seosubtitle">
+      <image src="./../../images/hbleft.png"></image>
+      <text>ROI就是我们的使命</text>
+      <image src="./../../images/hbright.png"></image>
+    </view>
+  </view>
+</view>
+<!-- <image src="./../../images/border1.png" class="bor01"></image> -->
+<view class="turnbtn">
+   <!-- <view bindtap="semdatachange" class="{{onsem?'':'turnbtnact'}}">sem</view>  -->
+   <navigator url="./sem" bindtap="semdatachange" class="{{onsem?'':'turnbtnact'}}">sem</navigator> 
+   <!-- <view bindtap="seodatachange" class="{{onseo?'':'turnbtnact'}}">seo</view>  -->
+   <navigator url="./../seo/seo" bindtap="seodatachange" class="{{onseo?'':'turnbtnact'}}">seo</navigator>   
+</view>
+<view class="data">
+  <text>推广概览</text>
+  <view class="databtn">
+<!--     <view class="databtnact">今日</view>
+    <view>昨日</view>
+    <view>近七天</view> -->
+    <button bindtap='today' class="{{today?'databtnact':''}}">今日</button>
+    <button bindtap='yesterday' class="{{yesterday?'databtnact':''}}">昨日</button>
+    <button bindtap='theseday' class="{{theseday?'databtnact':''}}">近七天</button>
+  </view>
+  <!-- 	<view class="dataseleced">
+		<view class="data_one" bindtap="clickdata">
+			 <view class="phone_personal">{{firstdata}}</view>
+		 </view>
+		<view class="data_box">
+			  <view class="data_select" hidden="{{selectdata}}">
+				  <view class="select_one" bindtap="mySelect" data-me="2018/11/06 ~ 2018/11/06">2018/11/06 ~ 2018/11/06</view>
+				  <view class="select_one" bindtap="mySelect" data-me="2019/11/06 ~ 2019/11/06">2019/11/06 ~ 2019/11/06</view>
+				  <view class="select_one" bindtap="mySelect" data-me="2020/11/06 ~ 2020/11/06">2020/11/06 ~ 2020/11/06</view>
+			 </view>
+		 </view>
+	</view> -->
+  <!-- <picker bindchange="bindPickerChange" value="{{areaIndex}}" range="{{area}}">
+    <view class="picker">
+      {{area[areaIndex]}}
+    </view>
+    <image src="./../../images/btnselected.png"></image>
+  </picker> -->
+</view>
+<view class="amount">
+  <view class="icon">
+    <image src="./../../images/sem01.png"></image>
+    <text>{{showview}}
+		</text>
+    <text>展现</text>
+  </view>
+  <view class="icon">
+    <image src="./../../images/sem02.png"></image>
+    <text>
+      {{clickview}}
+		</text>
+    <text>点击</text>
+  </view>
+  <view class="icon">
+    <image src="./../../images/sem03.png"></image>
+    <text>{{shopview}}
+		</text>
+    <text>收录量</text>
+  </view>
+  <view class="icon">
+    <image src="./../../images/sem04.png"></image>
+    <text>
+			{{cpcview}}
+		</text>
+    <text>CPC</text>
+  </view>
+  <view class="icon">
+    <image src="./../../images/sem05.png"></image>
+    <text>
+			{{cprview}}
+		</text>
+    <text>CPR</text>
+  </view>
+</view>
+<view class="chart">
+  <view class='zx'>
+    <canvas class="canvas" canvas-id="lineGraph"></canvas>
+  </view>
+  <view class='zx'>
+    <canvas class="canvas" canvas-id="thesaurus"></canvas>
+  </view>
+</view>
+<view class='chart chartsignal'>
+      <view class='semtitle'>事件总览</view>
+      <view class="signal">
+              <image src="./../../images/topconer.png" class="topconer"></image>
+              <view class="semright">              
+                        <text>{{showview}}</text>
+                        <text>
+                                    展现
+                        </text>
+              </view>
+             <image src="./../../images/semb.png" class="semb"></image>
+              <view class="line">
+                   <canvas class="canvas" canvas-id="words"></canvas>
+              </view>
+              <image src="./../../images/bottomconer.png" class="bottomconer"></image>
+      </view>
+      <view class="signal">
+              <image src="./../../images/topconer.png" class="topconer"></image>
+              <view class="semright">              
+                        <text>{{clickview}}</text>
+                        <text>
+                                    点击
+                        </text>
+              </view>
+             <image src="./../../images/semb.png" class="semb"></image>
+              <view class="line">
+                   <canvas class="canvas" canvas-id="clicks"></canvas>
+              </view>
+              <image src="./../../images/bottomconer.png" class="bottomconer"></image>
+      </view>
+            <view class="signal">
+              <image src="./../../images/topconer.png" class="topconer"></image>
+              <view class="semright">              
+                        <text>{{shopview}}</text>
+                        <text>
+                                    消费
+                        </text>
+              </view>
+             <image src="./../../images/semb.png" class="semb"></image>
+              <view class="line">
+                   <canvas class="canvas" canvas-id="shop"></canvas>
+              </view>
+              <image src="./../../images/bottomconer.png" class="bottomconer"></image>
+      </view>
+            <view class="signal">
+              <image src="./../../images/topconer.png" class="topconer"></image>
+              <view class="semright">              
+                        <text>{{cpcview}}</text>
+                        <text>
+                                    CPC
+                        </text>
+              </view>
+             <image src="./../../images/semb.png" class="semb"></image>
+              <view class="line">
+                   <canvas class="canvas" canvas-id="cpc"></canvas>
+              </view>
+              <image src="./../../images/bottomconer.png" class="bottomconer"></image>
+      </view>
+            <view class="signal">
+              <image src="./../../images/topconer.png" class="topconer"></image>
+              <view class="semright">              
+                        <text>{{cprview}}</text>
+                        <text>
+                                    CPR
+                        </text>
+              </view>
+             <image src="./../../images/semb.png" class="semb"></image>
+              <view class="line">
+                   <canvas class="canvas" canvas-id="cpr"></canvas>
+              </view>
+              <image src="./../../images/bottomconer.png" class="bottomconer"></image>
+      </view>
+</view>

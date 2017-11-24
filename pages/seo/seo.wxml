@@ -1,0 +1,189 @@
+
+<!--                                   返回顶层的外框                                   -->
+<!-- <scroll-view scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}" bindscrolltolower="getMore" style="position:absolute; top:0; left:0; right:0; bottom:0;"> -->
+<view class='header'>
+	<view class="headertop">
+		 <view class="logo">
+		   	 <image src='../../images/logo.png' class='logopic'></image>
+		 </view>
+		<text>微信小程序</text>
+	</view>
+	 <view class="headerbottom">
+		<text class="seotitle">沉淀搜索引擎海量大数据</text>
+		<view class="seosubtitle">
+			<image src="./../../images/hbleft.png"></image>
+			<text>ROI就是我们的使命</text>
+			<image src="./../../images/hbright.png"></image>
+		</view>
+	 </view>
+</view>
+<!-- <image src="./../../images/border1.png" class="bor01"></image> -->
+<view class="turnbtn">
+	<navigator url="./../sem/sem" bindtap="semdatachange" class="{{onsem?'':'turnbtnact'}}">sem</navigator>
+	<navigator url="./seo" bindtap="seodatachange" class="{{onseo?'':'turnbtnact'}}">seo</navigator>
+</view>
+<view class="data">
+	<text>推广概览</text>
+  <!--                                第二种按钮的切换样式                                            -->
+  <view class="databtn">
+  <!--                               正在加载中的动画——————————————————动画1                              -->
+		 <!-- <loading hidden="{{loadingHidden}}">  
+		 加载中...  
+	 	 </loading>   -->
+ <!--                                  正在加载中的动画————————————————————动画2                           -->
+    <block wx:if="{{showLoading}}">
+      <view class="page-loading">
+        <text class="weui-loading"/><text class="loading-text">正在加载中</text>
+      </view>
+    </block>
+		<button bindtap='today' class="{{today?'databtnact':''}}">今日</button>
+		<button bindtap='yesterday' class="{{yesterday?'databtnact':''}}">昨日</button>
+		<button bindtap='theseday' class="{{theseday?'databtnact':''}}">近七天</button>
+	</view>  
+  <!--                                           第一种按钮的切换样式                                         -->
+	 <!-- <view class="databtn">
+		<view bindtap="today" class="databtnact">今日</view>
+		<view bindtap="lastday">昨日</view>
+		<view bindtap="theseday">近七天</view>
+	</view>  -->
+<!--                                               第一种下拉框                                               -->
+<!-- 	<view class="dataseleced">
+		<view class="data_one" bindtap="clickdata">
+			 <view class="phone_personal">{{firstdata}}</view>
+		 </view>
+		<view class="data_box">
+			  <view class="data_select" hidden="{{selectdata}}">
+				  <view class="select_one" bindtap="mySelect" data-me="2018/11/06 ~ 2018/11/06">2018/11/06 ~ 2018/11/06</view>
+				  <view class="select_one" bindtap="mySelect" data-me="2019/11/06 ~ 2019/11/06">2019/11/06 ~ 2019/11/06</view>
+				  <view class="select_one" bindtap="mySelect" data-me="2020/11/06 ~ 2020/11/06">2020/11/06 ~ 2020/11/06</view>
+			 </view>
+		 </view>
+	</view> -->
+<!-- <picker bindchange="bindPickerChange" value="{{areaIndex}}" range="{{area}}">  
+    <view class="picker">  
+      {{area[areaIndex]}}  
+    </view>  
+    <image src="./../../images/btnselected.png"></image>
+</picker>  -->
+</view>
+<view class="amount">
+	<view class="icon">
+		<image src="./../../images/icon1.png"></image>
+		<text>945630
+		</text>
+		<text>PV</text>
+	</view>
+	<view class="icon">
+		<image src="./../../images/icon2.png"></image>
+		<text>945630
+		</text>
+		<text>UV</text>
+	</view>
+	<view class="icon">
+		<image src="./../../images/icon3.png"></image>
+		<text>945630
+		</text>
+		<text>收录量</text>
+	</view>
+	<view class="icon">
+		<image src="./../../images/icon4.png"></image>
+		<text>
+			945630
+		</text>
+		<text>关键词库</text>
+	</view>
+</view>
+<view class="chart" bindtap="shutinfo">
+	<view class='zx'>
+	      <canvas class="canvas" canvas-id="lineGraph"></canvas>
+	</view>
+	<view class='zx'>
+	      <canvas class="canvas" canvas-id="thesaurus"></canvas>
+	</view>
+	<view class='zx'>
+	      <canvas class="canvas" canvas-id="rank"></canvas>
+	</view>
+	<view class='form'>
+		<text>关键词排名列表</text>
+		<view class="table">
+      			  <image src="./../../images/topconer.png" class="topconer"></image>
+      			  <view class="tableleft">
+	      			  <view class="tr bg-w">
+					    <view class="num th">编号</view>
+					    <view class="keys th">关键词</view>
+					    <view class="ranking th">排名</view>
+<!-- 					    <view class="num th">编号</view>
+					    <view class="keys th">关键词</view>
+					    <view class="ranking th">排名</view> -->
+				  </view>
+				  <block wx:for="{{listData}}" wx:key="{{code}}">
+					    <view class="tr bg-g" >
+						      <view class="td num">{{item.num}}</view>
+						      <view class="td keys" catchtap="showinfo">{{item.keys}}</view>
+						      <view class="td ranking">{{item.type}} 
+						      	<image src="./../../images/top.png" wx:if="{{item.rank}}"></image>
+						      	 <image src="./../../images/down.png" wx:else></image>
+						      </view>
+<!-- 						      <view class="td num">{{item.num}}</view>
+						      <view class="td keys">{{item.keys}}</view>
+						      <view class="td ranking">{{item.type}}<image src="./../../images/top.png" wx:if="{{item.rank}}"></image> <image src="./../../images/down.png" wx:else></image></view> -->
+					    </view>
+					<!--<view class="tr">
+						      <view class="td">{{item.code}}</view>
+						      <view class="td">{{item.text}}</view>
+						      <view class="td">{{item.type}}</view>
+					</view> -->
+				  </block>
+      			  </view>
+      			  <view class="tableright">
+      			  	 <view class="tr bg-w">
+					    <view class="num th">编号</view>
+					    <view class="keys th">关键词</view>
+					    <view class="ranking th">排名</view>
+<!-- 					    <view class="num th">编号</view>
+					    <view class="keys th">关键词</view>
+					    <view class="ranking th">排名</view> -->
+				  </view>
+				  <block wx:for="{{listData2}}" wx:key="{{code2}}">
+					    <view class="tr bg-g" >
+						      <view class="td num">{{item.num}}</view>
+						      <view class="td keys" catchtap="showinfo">{{item.keys}}</view>
+						      <view class="td ranking">{{item.type}} 
+						      	<block wx:if="{{item.flag}}">
+							      	<image src="./../../images/top.png" wx:if="{{item.rank}}"></image>
+							      	 <image src="./../../images/down.png"  wx:if="{{!item.rank}}"></image>
+						      	</block>
+						      </view>
+	<!-- 					      <view class="td num">{{item.num}}</view>
+						      <view class="td keys">{{item.keys}}</view>
+						      <view class="td ranking">{{item.type}}<image src="./../../images/top.png" wx:if="{{item.rank}}"></image> <image src="./../../images/down.png" wx:else></image></view> -->
+					    </view>
+					<!--<view class="tr">
+						      <view class="td">{{item.code}}</view>
+						      <view class="td">{{item.text}}</view>
+						      <view class="td">{{item.type}}</view>
+					</view> -->
+				  </block>
+      			  </view>
+			<view class="outerline" wx:if="{{showinfo}}">
+				<view class='pop'>
+				      <canvas class="canvas" canvas-id="seokeywords"></canvas>
+				</view>
+			</view>
+       			 <image src="./../../images/bottomconer.png" class="bottomconer"></image>
+		</view>
+	</view>
+<!-- 	<view class="outerline" wx:if="{{showinfo}}">
+		<view class='pop'>
+		      <canvas class="canvas" canvas-id="seokeywords"></canvas>
+		</view>
+	</view> -->
+</view>
+<!-- </scroll-view> -->
+
+<!--                                   返回顶层                       -->
+<!-- <view class="widget-goTop" bindtap="goTop" wx:if="{{ floorstatus }}">
+  <view class="gotop-wrap">
+    <view class="icon icon-top"></view> 
+  </view>
+</view> -->

@@ -1,0 +1,10 @@
+<view class='box'>
+<image src="../../images/border_03.png" class='img'></image>
+  <view class='content'>
+        <text class='title'>联系商务开通账号</text>
+        <image src="../../images/center_03.png"></image>
+        <text class="bl">联系电话
+        </text>
+		    <text class="bl">18666991234</text>
+  </view>
+</view>

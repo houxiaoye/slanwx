@@ -1,0 +1,42 @@
+ page{
+  width:100%;
+  height: 100%;
+  background: #170e3d;  
+} 
+.box{
+  width:100%;
+  height: 1000rpx;
+  display: flex;
+   /* flex-direction: column;  */
+  justify-content: center;
+  align-items: center;
+  text-align: center;  
+}
+.box .img{
+  position:absolute;
+}
+.content{
+  width: 620rpx;
+  height: 557rpx; 
+   padding-top:100rpx; 
+  display: inline-block;
+  /* background: #f00; */
+  text-align: center;
+  box-sizing: border-box;
+  color:#4bc2ff;
+}
+content .title{
+  font-size:50rpx;
+  font-weight: 900;
+}
+.content image{
+    display: inline-block;
+    width:450rpx;
+    height: 34rpx;
+    margin:70rpx 0 50rpx 0;
+}
+.content text{
+  display: block;
+  font-size:42rpx;
+  margin:10rpx 0;
+}
