@@ -19,7 +19,7 @@
    <!-- <view bindtap="semdatachange" class="{{onsem?'':'turnbtnact'}}">sem</view>  -->
    <navigator url="./sem" bindtap="semdatachange" class="{{onsem?'':'turnbtnact'}}">sem</navigator> 
    <!-- <view bindtap="seodatachange" class="{{onseo?'':'turnbtnact'}}">seo</view>  -->
-   <navigator url="./../seo/seo" bindtap="seodatachange" class="{{onseo?'':'turnbtnact'}}">seo</navigator>   
+   <navigator url="./../seo/seo" bindtap="seodatachange" class="{{onseo?'':'turnbtnact'}}" open-type="switchTab">seo</navigator>   
 </view>
 <view class="data">
   <text>推广概览</text>

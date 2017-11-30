@@ -1,0 +1,33 @@
+<!--pages/connect/connect.wxml-->
+<view class='box'>
+ <view class='logopic'>
+  <image src="./../../images/logo2.png" style="width:233rpx;height:42rpx;position:absolute;top:105rpx;left:187rpx;"></image>
+</view> 
+ <image src="../../images/border_03.png" class='img'></image> 
+  <view class='content'>
+        <view class='cus'>
+            <text class='custitle'>客服</text>
+            <view>
+              <image src="./../../images/tel.png"></image>
+              <text>电话：021-88888888</text>
+            </view>
+            <view>
+                <image src="./../../images/mail.png"></image>
+                <text>邮箱：021-88888888</text>
+            </view>
+        </view>
+        <image src="../../images/center_03.png" class='centerborder'></image>
+        <view class='bus'>
+            <text class='bustitle'>商务</text>
+            <view>
+              <image src="./../../images/tel.png"></image>
+              <text>电话：021-88888888</text>
+            </view>
+            <view>
+                <image src="./../../images/mail.png"></image>
+                <text>邮箱：021-88888888</text>
+            </view>
+        </view>
+  </view>
+</view>
+

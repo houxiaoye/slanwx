@@ -1,0 +1,18 @@
+<view class='logo'>
+   <image src="./../../images/logo2.png"></image>
+</view>
+<view class='content'>
+  <view class='top'>
+    <text class='customer'>客服</text>
+    <view class='tel'><image src="./../../images/tel.png"></image>电话：XXXXXXXXXXXXXX</view>
+    <view class='email'><image src="./../../images/mail.png"></image>邮箱：XXXXXXXXXXXXX</view>
+  </view>
+  <view class='centerborder'>
+      <image src="../../images/center_03.png" class='centerborder'></image>    
+  </view>
+  <view class='bottom'>
+    <text class="business">商务</text>
+    <view><image src="./../../images/tel.png"></image>电话：XXXXXXXXXXXXXXXXXXXX</view>
+    <view><image src="./../../images/mail.png"></image>邮箱：XXXXXXXXXXXXXXXXXXXX</view>
+  </view>
+</view>

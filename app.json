@@ -1,29 +1,41 @@
 {
   "pages":[
-    "pages/seo/seo",    
-    "pages/sem/sem",    
+    "pages/contact/contact",
+    "pages/seo/seo",
+    "pages/sem/sem",  
+    "pages/evaluate/evaluate",
+    "pages/connect/connect",    
     "pages/index/index"
   ],
-  "tabBar": {
-    "list": [{
-      "pagePath": "./page/seo/seo",
-      "text": "text",
-      "iconPath": "iconPath",
-      "navigationBarTitleText": "seo",
-      "selectedIconPath": "selectedIconPath"
-    },
-    {
-      "pagePath": "./page/sem/sem",
-      "text": "text",
-      "iconPath": "iconPath",
-      "navigationBarTitleText": "首页",
-      "selectedIconPath": "selectedIconPath"
-    }]
-  },
-  "window":{
+    "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#333",
     "navigationBarTitleText": "Slan",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+     "borderStyle": "#179fff" ,
+     "selectedColor": "#179fff",
+     "color": "#a9b7b7",  
+     "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/seo/seo",
+      "text": "首页",
+      "iconPath" :  "./images/tab1.png",
+      "selectedIconPath": "./images/tab01.png"
+    },
+    {
+      "pagePath": "pages/evaluate/evaluate",
+      "text": "反馈",
+      "iconPath" :  "./images/tab2.png",
+      "selectedIconPath": "./images/tab02.png"
+    },
+    {
+      "pagePath": "pages/contact/contact",
+      "text": "联系",
+      "iconPath": "./images/tab3.png",
+      "selectedIconPath": "./images/tab03.png"
+    }]
   }
+
 }

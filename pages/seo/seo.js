@@ -54,7 +54,7 @@ shutinfo:function(){
   this.setData({
     showinfo:false
   })
-      this.seokeywords()
+   this.seokeywords()
 },
 /*展示每个关键词*/
 showinfo:function(){
@@ -63,19 +63,13 @@ showinfo:function(){
     showinfo:true
   })
 },
-
-
-
   /*seo和sem之间的按钮切换*/
-  semdatachange:function(e){
-    // wx.navigator({
-    //   url: './../sem/sem'
-    // }),
-        this.setData({
-          onsem:true,
-          onseo:false
-        })
-  },
+  // semdatachange:function(e){
+  //       this.setData({
+  //         onsem:true,
+  //         onseo:false
+  //       })
+  // },
   seodatachange:function(e){
     this.setData({
       onsem:false,

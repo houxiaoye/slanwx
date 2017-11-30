@@ -1,0 +1,41 @@
+<view class="evaluatetitle">
+	请对我们的服务进行评分
+</view>
+<view class="emoticom">
+	<view bindtap="onagree" class="{{agree?'':'agrees'}}">
+		<image src="./../../images/emoticon.png"  wx:if="{{agree}}"></image>
+		<image src="./../../images/emoticon02.png" wx:else></image>
+		<text class="{{agree?'':'agrees'}}">不满意</text>
+	</view>
+	<view bindtap="oncommon" class="{{common?'':'agrees'}}">
+		<image src="./../../images/emoticon3.png"  wx:if="{{common}}"></image>
+		<image src="./../../images/emoticon03.png" wx:else></image>
+		<text class="{{common?'':'agrees'}}">还可以</text>
+	</view>
+	<view bindtap="ondisagree" class="{{disagree?'':'agrees'}}">
+		<image src="./../../images/emoticon01.png"  wx:if="{{disagree}}"></image>
+		<image src="./../../images/emoticon2.png" wx:else></image>
+		<text class="{{disagree?'':'agrees'}}">很满意</text>
+	</view>
+</view>
+<view class="advice">
+	<text class="rebacktitle">
+		意见反馈
+	</text>
+	<view class="forms">
+		<form action="">
+			<textarea class="rebackcontent" placeholder="写下您对我们的意见与建议，我们会努力提升" placeholder-style="color:#12365b;"></textarea>
+			 <image src="./../../images/topconer.png" class="tconer"></image> 
+			 <image src="./../../images/bottomconer.png" class="bconer"></image> 
+			 <image src="./../../images/st4.png" class="bconerst4 st"></image> 
+			 <image src="./../../images/st1.png" class="bconerst1 st"></image> 
+			 <view class="stbox">
+				 <button formType="submit">确认提交</button>
+				<image src="./../../images/st1.png" class="st st1"></image>
+				<image src="./../../images/st2.png" class="st st2"></image>
+				<image src="./../../images/st3.png" class="st st3"></image>
+				<image src="./../../images/st4.png" class="st st4"></image>
+			 </view>
+		</form>
+	</view>
+</view>
